@@ -39,5 +39,22 @@ class OrderController extends Controller
         return response()->json($order, 201);
     }
 
+    public function update(Request $request, $id)
+    {
+        $data = $request->all();
+        $order = Order::find($id);
+        $order->update($data);
+        return response()->json($order);
+    }
+
+    public function cancel($id) 
+    {
+        $order = Order::find($id);
+        $order->status = 'canceled';
+        $order->save();
+        return response()->json($order);
+    }
+
+
     
 }

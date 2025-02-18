@@ -43,3 +43,7 @@ Route::get('/orders',[OrderController::class,'list']);                       //s
 Route::post('/orders',[OrderController::class,'create']);                 //create order
 
 Route::get('/orders/{id}',[OrderController::class,'show']);             //show order by id
+
+Route::put('/orders/{id}',[OrderController::class,'update']);          //update order by id
+
+Route::delete('/orders/{id}',[OrderController::class,'delete']);       //delete order by id
