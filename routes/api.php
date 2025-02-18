@@ -46,4 +46,4 @@ Route::get('/orders/{id}',[OrderController::class,'show']);             //show o
 
 Route::put('/orders/{id}',[OrderController::class,'update']);          //update order by id
 
-Route::delete('/orders/{id}',[OrderController::class,'delete']);       //delete order by id
+Route::delete('/orders/{id}',[OrderController::class,'cancel']);       //delete order by id

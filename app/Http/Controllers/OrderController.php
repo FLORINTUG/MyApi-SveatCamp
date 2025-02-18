@@ -39,6 +39,7 @@ class OrderController extends Controller
         return response()->json($order, 201);
     }
 
+    // Update order
     public function update(Request $request, $id)
     {
         $data = $request->all();
@@ -47,14 +48,13 @@ class OrderController extends Controller
         return response()->json($order);
     }
 
+    // Delete order
     public function cancel($id) 
     {
         $order = Order::find($id);
-        $order->status = 'canceled';
-        $order->save();
+        $order->update(['status' => 'canceled']);
+    
         return response()->json($order);
     }
-
-
-    
+  
 }
