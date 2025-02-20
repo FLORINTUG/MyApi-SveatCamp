@@ -47,3 +47,13 @@ Route::get('/orders/{id}',[OrderController::class,'show']);             //show o
 Route::put('/orders/{id}',[OrderController::class,'update']);          //update order by id
 
 Route::delete('/orders/{id}',[OrderController::class,'cancel']);       //delete order by id
+
+//Third day Api  Method CRUD
+
+// Unsplash Api 
+
+Route::get('/external',[RollController::class,'external']); //http://myapi.test/api/external
+
+//Homework Unsplah Api
+
+Route::get('/photos/random',[RollController::class,'external']); //http://myapi.test/api/photos/random

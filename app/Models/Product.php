@@ -23,7 +23,19 @@ class Product extends Model
      */
     public static function createProduct(array $data)
     {
-        return self::create($data);
+
+        $baseURL = 'https://api.unsplash.com/photos/random';
+    $key = 'fDNtclCvlXO0OpWh7HvoPDVw7b6yPvSwJK6tBQS6AEw';
+    $path = 'photos/random';
+
+    $response = Http::withHeaders([
+        'Authorization' => 'Client-ID ' . $key
+    ]) ->get($baseURL, query:['query' => $data['name']]);
+    
+    $data =['image' => $response->json()['urls']['small']];
+
+            return self::create($data);
+       
     }
 
     /*
