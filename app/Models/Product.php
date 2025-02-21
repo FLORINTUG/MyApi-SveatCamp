@@ -25,7 +25,7 @@ class Product extends Model
     {
 
         $baseURL = 'https://api.unsplash.com/photos/random';
-    $key = 'fDNtclCvlXO0OpWh7HvoPDVw7b6yPvSwJK6tBQS6AEw';
+    $key = '';
     $path = 'photos/random';
 
     $response = Http::withHeaders([
